@@ -40,6 +40,7 @@ def RemoverNome(nome, endereço, telefone):
         print("Nome não cadastrado!")
         return False
 
+
 def ConsultarNome(nome):
     with open("nomes.json", "r") as arquivo:
         dados = json.load(arquivo)
