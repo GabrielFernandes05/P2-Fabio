@@ -38,22 +38,25 @@ def RemoverNome(nome, endereço, telefone):
             return True
     else:
         print("Nome não cadastrado!")
-        return False
+        return True
 
 
 def ConsultarNome(nome):
     with open("nomes.json", "r") as arquivo:
         dados = json.load(arquivo)
-
+        c = 0
         for item in dados["nomes"]:
             if str(nome) in item:
+                c += 1
                 print(f"Nome encontrado: {nome}")
 
                 print(f"Endereço: {item[nome]['endereço']}")
 
                 print(f"Telefone: {item[nome]['telefone']}")
+        if c == 0:
+                print("Nome não encontrado!")
         else:
-            print("Nome não encontrado!")
+            print(f"Total de nomes encontrados: {c}")
 
 
 def ListarNomes():
@@ -91,7 +94,7 @@ Gabriel Fernandes de Freitas Moreira Duarte de Lima - 202310648 - 2º período
 
 Renan Auguto Santos Silva - 202311388 - 2º período
 
-Maria Eduarda Franklin Barbosa - 202310532
+Maria Eduarda Franklin Barbosa - 202310532 - 2º período
 
 --------------------------------------------------------------------------------
           """
